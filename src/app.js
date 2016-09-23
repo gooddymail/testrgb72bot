@@ -40,7 +40,7 @@ function processEvent(event) {
                 let responseText = response.result.fulfillment.speech;
                 let responseData = response.result.fulfillment.data;
                 let action = response.result.action;
-                let facebookAction = response.result.parameters.facebookAction;
+                let facebookAction = response.result.parameters.facebookaction;
 
                 console.log(response.result.parameters)
 
