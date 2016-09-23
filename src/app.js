@@ -78,18 +78,19 @@ function processEvent(event) {
                     });
 
                     if (isDefined(facebookAction)) {
+                      console.log('send action')
                       sendFBMessage(sender, {attachment: {
-                        'type': 'template',
-                        'payload': {
-                          'template_type': "generic",
-                          'elements': [
+                        type: 'template',
+                        payload: {
+                          template_type: "generic",
+                          elements: [
                             {
-                              'title': 'Welcome to creative talk page',
-                              'buttons': [
+                              title: 'Welcome to creative talk page',
+                              buttons: [
                                 {
-                                  'type': 'web_url',
-                                  'url': "https://www.facebook.com/creativetalklive",
-                                  'title': "View Website"
+                                  type: 'web_url',
+                                  url: "https://www.facebook.com/creativetalklive",
+                                  title: "View Website"
                                 }
                               ]
 
