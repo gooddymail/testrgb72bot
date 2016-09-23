@@ -73,9 +73,11 @@ function processEvent(event) {
                     // so we must split message if needed
                     var splittedText = splitResponse(responseText);
 
-                    async.eachSeries(splittedText, (textPart, callback) => {
-                        sendFBMessage(sender, {text: textPart}, callback);
-                    });
+                    // async.eachSeries(splittedText, (textPart, callback) => {
+                    //     sendFBMessage(sender, {text: textPart}, callback);
+                    // });
+
+                    console.log(facebookAction)
 
                     if (isDefined(facebookAction)) {
                       console.log('send action')
