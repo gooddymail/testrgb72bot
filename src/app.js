@@ -42,7 +42,7 @@ function processEvent(event) {
                 let action = response.result.action;
                 let facebookAction = response.result.parameters.facebookaction;
 
-                console.log(response.result.parameters)
+                console.log(response.result)
 
                 if (isDefined(responseData) && isDefined(responseData.facebook)) {
                     if (!Array.isArray(responseData.facebook)) {
