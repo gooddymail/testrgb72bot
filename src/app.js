@@ -40,8 +40,8 @@ function processEvent(event) {
                 let responseText = response.result.fulfillment.speech;
                 let responseData = response.result.fulfillment.data;
                 let action = response.result.action;
-                // let facebookAction = response.result.parameters.facebookAction;
-                console.log(response.result)
+                let facebookAction = response.result.parameters.facebookAction;
+
 
                 if (isDefined(responseData) && isDefined(responseData.facebook)) {
                     if (!Array.isArray(responseData.facebook)) {
@@ -76,6 +76,28 @@ function processEvent(event) {
                     async.eachSeries(splittedText, (textPart, callback) => {
                         sendFBMessage(sender, {text: textPart}, callback);
                     });
+
+                    if (isDefined(facebookAction)) {
+                      sendFBMessage(sender, {attachment: {
+                        'type': 'template',
+                        'payload': {
+                          'template_type': "generic",
+                          'elements': [
+                            {
+                              'title': 'Welcome to creative talk page',
+                              'buttons': [
+                                {
+                                  'type': 'web_url',
+                                  'url': "https://www.facebook.com/creativetalklive",
+                                  'title': "View Website"
+                                }
+                              ]
+
+                            }
+                          ]
+                        }
+                      }}, callback)
+                    }
                 }
 
             }
