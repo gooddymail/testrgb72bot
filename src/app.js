@@ -92,6 +92,11 @@ function processEvent(event) {
                                   type: 'web_url',
                                   url: "https://www.facebook.com/creativetalklive",
                                   title: "View Website"
+                                },
+                                {
+                                  type: 'postback'
+                                  title: 'more'
+                                  payload: 'show me more'
                                 }
                               ]
 
