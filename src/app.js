@@ -94,8 +94,8 @@ function processEvent(event) {
                                   title: "View Website"
                                 },
                                 {
-                                  type: 'postback'
-                                  title: 'more'
+                                  type: 'postback',
+                                  title: 'more',
                                   payload: 'show me more'
                                 }
                               ]
